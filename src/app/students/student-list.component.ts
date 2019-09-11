@@ -9,6 +9,7 @@ import { StudentService } from "./services/student.service";
 export class StudentListComponent {
     message: string = 'Simple message';
     students: Student[] = [];
+    logging: string = '';
 
     constructor(private studentService: StudentService) {
         this.updateStudentList();
@@ -21,5 +22,9 @@ export class StudentListComponent {
     updateStudentList() {
         this.students = this.studentService.getStudents();
 
+    }
+
+    goToDetails(lastname: string) {
+        // this.Logging = Lastname;
     }
 }
