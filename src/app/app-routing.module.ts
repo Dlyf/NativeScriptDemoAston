@@ -8,7 +8,7 @@ import { StudentListComponent } from "./students/student-list.component";
 const routes: Routes = [
     { path: "", redirectTo: "/students", pathMatch: "full" },
     { path: "students", component: StudentListComponent },
-    // { path: "item/:id", component: ItemDetailComponent }
+    // { path: students", component: ItemDetailComponent }
 ];
 
 @NgModule({

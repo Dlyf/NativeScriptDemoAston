@@ -1,3 +1,17 @@
 <StackLayout>
-    <Label text="hello world"></Label>
+    <GridLayout
+        height="50"
+        *ngFor="let student of students"
+        columns="100, 100, 100, *">
+        <Label
+            col="0"
+            [nsRouterLink]="['/students/', student.lastname]"
+            [text]="student.firstname"></Label>
+        <Label
+            col="1"
+            [text]="student.lastname"></Label>
+
+    </GridLayout>
+    <!-- <Label
+        col="[text]="test"></Label> -->
 </StackLayout>

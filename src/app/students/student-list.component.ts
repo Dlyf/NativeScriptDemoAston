@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { Student } from "./models/student.model";
+import { StudentService } from "./services/student.service";
 
 @Component({
     selector: 'student-list',
@@ -6,5 +8,18 @@ import { Component } from "@angular/core";
 })
 export class StudentListComponent {
     message: string = 'Simple message';
+    students: Student[] = [];
 
+    constructor(private studentService: StudentService) {
+        this.updateStudentList();
+    }
+
+    changeMessage() {
+        this.message = 'Message modifié';
+    }
+
+    updateStudentList() {
+        this.students = this.studentService.getStudents();
+
+    }
 }
